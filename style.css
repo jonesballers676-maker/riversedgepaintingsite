@@ -771,6 +771,16 @@ body.nav-open .nav-hamburger span:nth-child(3) {
   font-size: 1.08rem;
 }
 
+.page-hero .lead a {
+  color: #99f6e4;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.page-hero .lead a:hover {
+  color: #fff;
+}
+
 .page-hero-actions {
   display: flex;
   flex-wrap: wrap;

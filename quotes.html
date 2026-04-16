@@ -6,20 +6,35 @@
   <title>Get a Free Estimate | Rivers Edge Painting</title>
   <meta name="description" content="Request a free estimate from Rivers Edge Painting in Titusville, FL for residential painting, commercial painting, epoxy, and soft washing.">
   <meta name="robots" content="index,follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <div class="container nav-inner">
+  <nav class="site-nav">
+    <div class="container nav-row">
       <a href="/" class="brand" aria-label="Rivers Edge Painting home">
         <span class="brand-badge">RE</span>
-        <span class="brand-name">Rivers Edge Painting<span>Titusville, Florida</span></span>
+        <span class="brand-name">Rivers Edge Painting<span>Serving Brevard County</span></span>
       </a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/#services">Services</a></li>
-        <li><a href="quotes" class="btn btn-primary">Get Quote</a></li>
-      </ul>
+      <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-drawer">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li class="has-sub">
+            <a href="residential-painting">Services <span class="caret" aria-hidden="true"></span></a>
+            <ul class="sub-menu">
+              <li><a href="residential-painting">Residential Painting</a></li>
+              <li><a href="commercial-painting">Commercial Painting</a></li>
+              <li><a href="epoxy-coatings">Epoxy Floor Coatings</a></li>
+              <li><a href="soft-washing">Soft Washing</a></li>
+            </ul>
+          </li>
+          <li><a href="locations">Service Areas</a></li>
+          <li><a href="quotes" class="btn btn-primary">Free Estimate</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -27,8 +42,9 @@
     <div class="container quote-grid">
       <section class="quote-card">
         <div class="section-head">
-          <h2>Request Your Free Estimate</h2>
-          <p>Send a few project details and our local Titusville team will follow up with next steps.</p>
+          <p class="section-eyebrow">Start here</p>
+          <h2 class="font-display" style="font-size: 2rem;">Request your free estimate</h2>
+          <p>Send a few project details and our Titusville team will follow up with next steps.</p>
         </div>
 
         <p id="form-status" class="form-status" hidden></p>
@@ -91,31 +107,56 @@
       </section>
 
       <aside class="quote-card">
-        <h3>Contact Rivers Edge Painting</h3>
+        <h3 class="font-display" style="font-size: 1.5rem; margin-top: 0;">Contact Rivers Edge Painting</h3>
         <p><strong>Phone:</strong> <a href="tel:3214035047">321-403-5047</a></p>
         <p><strong>Email:</strong> <a href="mailto:info@riversedgepainting.com">info@riversedgepainting.com</a></p>
-        <p><strong>Service Area:</strong> Titusville and surrounding Brevard County communities.</p>
-        <hr style="border: none; border-top: 1px solid var(--line); margin: 1rem 0;">
-        <h3>What Happens Next</h3>
-        <ol class="steps">
+        <p><strong>Service Area:</strong> Titusville, Brevard County, and select Greater Orlando projects.</p>
+        <hr style="border: none; border-top: 1px solid var(--line); margin: 1.25rem 0;">
+        <h3 style="margin-top: 0;">What happens next</h3>
+        <ol class="steps-pro">
           <li>We contact you to confirm details.</li>
           <li>We schedule a walkthrough if needed.</li>
-          <li>You receive a clear quote.</li>
+          <li>You receive a clear written quote.</li>
         </ol>
       </aside>
     </div>
   </main>
 
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">Rivers Edge Painting</div>
-        <div class="footer-meta">Residential · Commercial · Epoxy · Soft Washing</div>
+  <footer class="site-footer">
+    <div class="container footer-grid-pro">
+      <div class="footer-brand-block">
+        <div class="name">Rivers Edge Painting</div>
+        <div class="meta">Residential, commercial, epoxy, and soft washing for Florida’s Space Coast.</div>
       </div>
-      <div class="footer-meta">Titusville, FL</div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="residential-painting">Residential Painting</a></li>
+          <li><a href="commercial-painting">Commercial Painting</a></li>
+          <li><a href="epoxy-coatings">Epoxy Coatings</a></li>
+          <li><a href="soft-washing">Soft Washing</a></li>
+          <li><a href="quotes">Free Estimate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service areas</h4>
+        <ul>
+          <li><a href="painting-in-titusville">Titusville, FL</a></li>
+          <li><a href="painting-in-merritt-island">Merritt Island, FL</a></li>
+          <li><a href="locations">View all cities</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:3214035047">321-403-5047</a></li>
+          <li><a href="mailto:info@riversedgepainting.com">info@riversedgepainting.com</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 
+  <script src="site.js" defer></script>
   <script>
     (function () {
       var q = new URLSearchParams(window.location.search);

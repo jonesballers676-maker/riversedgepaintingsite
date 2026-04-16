@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You | Rivers Edge Painting</title>
-  <meta name="description" content="Thank you for contacting Rivers Edge Painting. We'll be in touch soon.">
+  <title>House Painters in Titusville, FL | Rivers Edge Painting</title>
+  <meta name="description" content="Rivers Edge Painting is based in Titusville, FL. Residential painting, commercial painting, epoxy floors, and soft washing for historic homes, new builds, and businesses near the river.">
+  <meta name="robots" content="index,follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -37,34 +38,37 @@
     </div>
   </nav>
 
-  <main class="quote-shell">
-    <div class="container page-simple">
-      <p class="kicker" style="color: var(--primary); letter-spacing: 0.15em;">Success</p>
-      <h1 class="font-display">Thank you!</h1>
-      <p id="thank-sub">Your estimate request was sent. A member of our team will reach out within one business day.</p>
-      <p>If you need help sooner, call <a href="tel:3214035047" style="color: var(--primary-dark); font-weight: 700;">321-403-5047</a>.</p>
-      <a href="/" class="btn btn-primary">Back to home</a>
+  <header class="page-hero">
+    <div class="container">
+      <p class="kicker">Home base</p>
+      <h1 class="font-display">Painters in Titusville who know the river climate.</h1>
+      <p class="lead">Humidity rolling off the Indian River, afternoon storms, and historic wood siding all influence how paint should be specified. We live here too—so timelines, coatings, and prep match real Titusville conditions.</p>
+      <div class="page-hero-actions">
+        <a class="btn btn-primary" href="quotes">Book a Titusville estimate</a>
+        <a class="btn btn-ghost-light" href="tel:3214035047">Call 321-403-5047</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container content-block">
+      <h2>Services neighbors ask for</h2>
+      <p>Coastal cottages near the waterfront, ranch homes inland, and downtown storefronts each need different approaches. We handle <a href="residential-painting">interior and exterior residential painting</a>, <a href="commercial-painting">commercial repaints</a>, <a href="epoxy-coatings">garage epoxy</a>, and <a href="soft-washing">soft washing</a> to strip algae before paint day.</p>
+
+      <h2>Why local expertise matters</h2>
+      <p>Titusville properties deal with salt-tinged air, driving rain, and intense UV. We choose primers and topcoats rated for those stressors, calibrate soft washing for delicate siding, and schedule exterior work when moisture levels cooperate.</p>
+
+      <div class="section-tight">
+        <div class="cta-band-pro">
+          <div class="inner">
+            <h2>Ready for a walkthrough?</h2>
+            <p>We’ll tour your property, document repairs, and email a written scope—usually within a few business days.</p>
+            <a class="btn btn-light" href="quotes">Start my quote</a>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
-
-  <div class="container" style="margin-bottom: 3rem;">
-    <div class="locations-block">
-      <div class="section-head" style="margin-bottom: 0.75rem;">
-        <p class="section-eyebrow">Local service</p>
-        <h2 class="font-display" style="font-size: 1.75rem; margin: 0;">Proudly serving Brevard County &amp; beyond</h2>
-      </div>
-      <div class="loc-grid">
-        <a class="loc-chip" href="painting-in-titusville">Titusville</a>
-        <a class="loc-chip" href="painting-in-merritt-island">Merritt Island</a>
-        <a class="loc-chip" href="painting-in-cocoa">Cocoa</a>
-        <a class="loc-chip" href="painting-in-melbourne">Melbourne</a>
-        <a class="loc-chip" href="painting-in-palm-bay">Palm Bay</a>
-        <a class="loc-chip" href="painting-in-viera">Viera</a>
-        <a class="loc-chip" href="painting-in-port-orange">Port Orange</a>
-        <a class="loc-chip" href="locations">All areas</a>
-      </div>
-    </div>
-  </div>
 
   <footer class="site-footer">
     <div class="container footer-grid-pro">
@@ -99,20 +103,6 @@
       </div>
     </div>
   </footer>
-
   <script src="site.js" defer></script>
-  <script>
-    (function () {
-      var q = new URLSearchParams(window.location.search).get("rep");
-      var sub = document.getElementById("thank-sub");
-      if (!q || !sub) return;
-      var map = {
-        chris: "Your quote request was routed successfully. A team member will reach out within one business day.",
-        jason: "Your quote request was routed successfully. A team member will reach out within one business day.",
-        jake: "Your quote request was routed successfully. A team member will reach out within one business day."
-      };
-      if (map[q]) sub.textContent = map[q];
-    })();
-  </script>
 </body>
 </html>

@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You | Rivers Edge Painting</title>
-  <meta name="description" content="Thank you for contacting Rivers Edge Painting. We'll be in touch soon.">
+  <title>Service Areas | Rivers Edge Painting · Brevard County &amp; Beyond</title>
+  <meta name="description" content="Rivers Edge Painting serves Titusville, Merritt Island, Cocoa, Melbourne, Palm Bay, Viera, Port Orange, and Greater Orlando with residential painting, commercial painting, epoxy, and soft washing.">
+  <meta name="robots" content="index,follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -37,34 +38,58 @@
     </div>
   </nav>
 
-  <main class="quote-shell">
-    <div class="container page-simple">
-      <p class="kicker" style="color: var(--primary); letter-spacing: 0.15em;">Success</p>
-      <h1 class="font-display">Thank you!</h1>
-      <p id="thank-sub">Your estimate request was sent. A member of our team will reach out within one business day.</p>
-      <p>If you need help sooner, call <a href="tel:3214035047" style="color: var(--primary-dark); font-weight: 700;">321-403-5047</a>.</p>
-      <a href="/" class="btn btn-primary">Back to home</a>
+  <header class="page-hero">
+    <div class="container">
+      <p class="kicker">Space Coast &amp; beyond</p>
+      <h1 class="font-display">Local pages for every community we serve.</h1>
+      <p class="lead">Choose your city for neighborhood-specific considerations—sun exposure, HOA palettes, coastal grime, and architectural styles that influence product selection.</p>
+      <div class="page-hero-actions">
+        <a class="btn btn-primary" href="quotes">Get a free estimate</a>
+        <a class="btn btn-ghost-light" href="tel:3214035047">Call 321-403-5047</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="locations-block">
+        <div class="section-head" style="margin-bottom: 1rem;">
+          <p class="section-eyebrow">Florida communities</p>
+          <h2>Brevard County anchors</h2>
+          <p>Our Titusville-based crews routinely travel throughout the county for interiors, exteriors, epoxy, and soft washing projects.</p>
+        </div>
+        <div class="loc-grid">
+          <a class="loc-chip" href="painting-in-titusville">Titusville</a>
+          <a class="loc-chip" href="painting-in-merritt-island">Merritt Island</a>
+          <a class="loc-chip" href="painting-in-cocoa">Cocoa</a>
+          <a class="loc-chip" href="painting-in-melbourne">Melbourne</a>
+          <a class="loc-chip" href="painting-in-palm-bay">Palm Bay</a>
+          <a class="loc-chip" href="painting-in-viera">Viera</a>
+        </div>
+      </div>
+
+      <div class="locations-block" style="margin-top: 1.5rem;">
+        <div class="section-head" style="margin-bottom: 1rem;">
+          <h2>Extended service area</h2>
+          <p>Have a larger commercial rollout or a secondary residence? Talk to us about scheduling in neighboring markets.</p>
+        </div>
+        <div class="loc-grid">
+          <a class="loc-chip" href="painting-in-port-orange">Port Orange</a>
+          <a class="loc-chip" href="painting-in-orlando-fl">Greater Orlando</a>
+        </div>
+      </div>
+
+      <div class="section-tight">
+        <div class="cta-band-pro">
+          <div class="inner">
+            <h2>Don’t see your neighborhood?</h2>
+            <p>We regularly add routes for multi-phase work. Send the address and we’ll confirm availability.</p>
+            <a class="btn btn-light" href="quotes">Tell us where you are</a>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
-
-  <div class="container" style="margin-bottom: 3rem;">
-    <div class="locations-block">
-      <div class="section-head" style="margin-bottom: 0.75rem;">
-        <p class="section-eyebrow">Local service</p>
-        <h2 class="font-display" style="font-size: 1.75rem; margin: 0;">Proudly serving Brevard County &amp; beyond</h2>
-      </div>
-      <div class="loc-grid">
-        <a class="loc-chip" href="painting-in-titusville">Titusville</a>
-        <a class="loc-chip" href="painting-in-merritt-island">Merritt Island</a>
-        <a class="loc-chip" href="painting-in-cocoa">Cocoa</a>
-        <a class="loc-chip" href="painting-in-melbourne">Melbourne</a>
-        <a class="loc-chip" href="painting-in-palm-bay">Palm Bay</a>
-        <a class="loc-chip" href="painting-in-viera">Viera</a>
-        <a class="loc-chip" href="painting-in-port-orange">Port Orange</a>
-        <a class="loc-chip" href="locations">All areas</a>
-      </div>
-    </div>
-  </div>
 
   <footer class="site-footer">
     <div class="container footer-grid-pro">
@@ -87,6 +112,7 @@
         <ul>
           <li><a href="painting-in-titusville">Titusville, FL</a></li>
           <li><a href="painting-in-merritt-island">Merritt Island, FL</a></li>
+          <li><a href="painting-in-melbourne">Melbourne, FL</a></li>
           <li><a href="locations">View all cities</a></li>
         </ul>
       </div>
@@ -99,20 +125,6 @@
       </div>
     </div>
   </footer>
-
   <script src="site.js" defer></script>
-  <script>
-    (function () {
-      var q = new URLSearchParams(window.location.search).get("rep");
-      var sub = document.getElementById("thank-sub");
-      if (!q || !sub) return;
-      var map = {
-        chris: "Your quote request was routed successfully. A team member will reach out within one business day.",
-        jason: "Your quote request was routed successfully. A team member will reach out within one business day.",
-        jake: "Your quote request was routed successfully. A team member will reach out within one business day."
-      };
-      if (map[q]) sub.textContent = map[q];
-    })();
-  </script>
 </body>
 </html>
