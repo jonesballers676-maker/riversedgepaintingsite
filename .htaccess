@@ -1,0 +1,88 @@
+# Extensionless URLs for static HTML (Apache / DreamHost shared hosting)
+# Requires: AllowOverride FileInfo (or All) so mod_rewrite runs.
+
+DirectoryIndex index.html
+
+# Static asset performance: cache hard + compress text responses
+<IfModule mod_headers.c>
+<FilesMatch "\.(?:css|js|mjs|jpg|jpeg|png|webp|gif|svg|ico|woff|woff2)$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType text/javascript "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresByType font/woff "access plus 1 year"
+ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/plain text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Quote pages: avoid stale HTML in the browser after swapping FormSubmit for send-quote.php
+<IfModule mod_headers.c>
+<FilesMatch "^(quotes|quote-chris|quote-jason|quote-jake)\.html$">
+  Header set Cache-Control "no-cache, private, must-revalidate"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# --- /quotes -> root quotes.html only ---
+# If a /quotes/ folder exists on the server (e.g. old quotes/index.html with FormSubmit),
+# Apache would serve that directory instead of quotes.html. Force the single page we maintain.
+RewriteRule ^quotes/?$ /quotes.html [END]
+
+# --- Blog index only (not /blog/some-post) ---
+RewriteCond %{REQUEST_URI} ^/blog/?$
+RewriteRule .* /blog.html [END]
+
+# --- Canonical /post/slug: drop accidental .html ---
+RewriteCond %{REQUEST_URI} ^/post/(.+)\.html$ [NC]
+RewriteRule .* /post/%1 [R=301,L,NE]
+
+# --- Old post URLs -> /post/slug (list .html before bare /blog/slug) ---
+RewriteCond %{REQUEST_URI} ^/blog/(.+)\.html$ [NC]
+RewriteRule .* /post/%1 [R=301,L,NE]
+
+RewriteCond %{REQUEST_URI} ^/blog/(.+)$ [NC]
+RewriteCond %1 !^$
+RewriteRule .* /post/%1 [R=301,L,NE]
+
+# --- Serve /post/slug from blog/slug.html on disk ---
+RewriteCond %{REQUEST_URI} ^/post/([^/]+)/?$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/blog/%1.html -f
+RewriteRule .* /blog/%1.html [END]
+
+# --- 301: /index.html -> / ---
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s+/index\.html(\?\S*)?\s [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# --- 301: /path.html -> /path (skip paths we already handle) ---
+RewriteCond %{THE_REQUEST} ^[A-Z]+\s+/(.+)\.html(\?\S*)?\s [NC]
+RewriteCond %1 !^index$
+RewriteCond %1 !^/?post/
+RewriteCond %1 !^/?blog/
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# --- Other extensionless pages at site root ---
+RewriteCond %{REQUEST_URI} !^/post/
+RewriteCond %{REQUEST_URI} !^/blog/
+RewriteCond %{REQUEST_URI} !^/blog$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [END]
+</IfModule>

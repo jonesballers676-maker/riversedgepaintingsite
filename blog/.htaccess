@@ -1,0 +1,2 @@
+# Turn off folder listing (posts live here; the blog index is root /blog.html)
+Options -Indexes
